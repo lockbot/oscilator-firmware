@@ -1,6 +1,6 @@
-# SOFIA Firmware - Guia de Build e Deploy (Raspberry Pi)
+# OSCILATOR Firmware - Guia de Build e Deploy (Raspberry Pi)
 
-Este guia explica como transferir, compilar e executar o firmware SOFIA na sua Raspberry Pi 3B a partir de um computador Windows.
+Este guia explica como transferir, compilar e executar o firmware OSCILATOR na sua Raspberry Pi 3B a partir de um computador Windows.
 
 ## 1. Preparação da Raspberry Pi
 
@@ -29,13 +29,13 @@ Como você está no Windows usando PuTTY, aqui estão as duas melhores formas:
 ### Opção A: WinSCP (Recomendado - Interface Gráfica)
 1. Instale o [WinSCP](https://winscp.net/).
 2. Conecte no IP da sua Pi (mesmas credenciais do PuTTY).
-3. Arraste a pasta `sofia-firmware` do Windows para dentro da pasta `/home/pi` (ou sua home).
+3. Arraste a pasta `oscilator-firmware` do Windows para dentro da pasta `/home/pi` (ou sua home).
 
 ### Opção B: PSCP (Linha de comando via PuTTY)
 O PuTTY vem com uma ferramenta chamada `pscp.exe`. No CMD ou PowerShell do seu Windows:
 ```powershell
 # Exemplo de comando:
-pscp -r .\sofia-firmware sofiapi@IP_DA_RASPBERRY:/home/sofiapi/
+pscp -r .\oscilator-firmware oscilatorpi@IP_DA_RASPBERRY:/home/oscilatorpi/
 ```
 
 ---
@@ -54,7 +54,7 @@ Como estamos compilando para Linux (Raspbian), o arquivo do FreeRTOS pode causar
 Dentro da Raspberry Pi (via PuTTY):
 
 ```bash
-cd ~/sofia-firmware
+cd ~/oscilator-firmware
 mkdir build
 cd build
 
@@ -65,7 +65,7 @@ cmake ..
 make
 
 # Executa o Firmware (sudo é necessário para acessar o barramento I2C /dev/i2c-1)
-sudo ./sofia_firmware
+sudo ./oscilator_firmware
 ```
 
 ## 5. Comandos do Teste
