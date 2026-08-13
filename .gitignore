@@ -70,3 +70,7 @@ proguard/
 
 # Log Files
 *.log
+
+#IDEs
+.vscode
+.idea
